@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 else if (flag==1) { Toast.makeText(getApplicationContext(),"예약을 해주세요 :)",Toast.LENGTH_SHORT).show(); return; }
                 cro1.setBase(SystemClock.elapsedRealtime());
                 cro1.start();
-                cro1.setTextColor(Color.RED);
+                cro1.setTextColor(Color.RED); //빨간색으로
             }
         });
 
