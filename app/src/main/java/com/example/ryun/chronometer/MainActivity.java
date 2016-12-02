@@ -82,5 +82,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(flag==0) { Toast.makeText(getApplicationContext(),"예약을 해주세요 :)",Toast.LENGTH_SHORT).show(); return; }
+                if(year==-1||min==-1) { Toast.makeText(getApplicationContext(),"예약시간을 입력해 주세요 :)",Toast.LENGTH_SHORT).show(); return; }
+                cro1.stop();
+                cro1.setTextColor(0xff0099cc);
+                text1.setText(year+"년"+mon+"월"+day+"일 "+hour+"시"+min+"분 예약됨 ");
+                flag=0;
+            }
+        });
+
     }
 }
