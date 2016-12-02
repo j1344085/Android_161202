@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
                 if(checkedId==R.id.radioButton) { calen1.setVisibility(View.VISIBLE); tp1.setVisibility(View.GONE); }
+                else if(checkedId==R.id.radioButton2) { tp1.setVisibility(View.VISIBLE); calen1.setVisibility(View.GONE); }
             }
         });
 
