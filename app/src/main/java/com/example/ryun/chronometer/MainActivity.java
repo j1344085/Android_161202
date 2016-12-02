@@ -47,6 +47,19 @@ public class MainActivity extends AppCompatActivity {
         cro1 = (Chronometer)findViewById(R.id.chronometer2);
         text1 = (TextView)findViewById(R.id.textView);
 
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(flag==0) flag=1;
+                else if (flag==1) { Toast.makeText(getApplicationContext(),"예약을 해주세요 :)",Toast.LENGTH_SHORT).show(); return; }
+                cro1.setBase(SystemClock.elapsedRealtime());
+                cro1.start();
+                cro1.setTextColor(Color.RED);
+            }
+        });
+
+
         rgroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
@@ -55,6 +68,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        calen1.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView calendarView, int i, int i1, int i2) {
+                year=i; mon=i1; day=i2;
+            }
+        });
+
+        tp1.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker timePicker, int i, int i1) {
+                hour=i; min=i1;
+            }
+        });
 
     }
 }
